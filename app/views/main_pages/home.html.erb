@@ -1,0 +1,26 @@
+<%= provide(:title, "Home") %>
+
+<div class="container-fluid text-center">
+	<div class="banner">
+	 <div class="sign_log">
+	 	<br>
+	 	<%= image_tag("moto.png", :alt => "moto") %>
+	 </div>
+	</div>
+
+	<div class="sign_button">
+	<% if logged_in? %>
+	  <% if current_customer.admin? && !current_customer?(@customer) %>
+	  <%= link_to "View All Customers", customers_path, class: "btn btn-lg btn-primary"%>
+	  <%= link_to "View All Products", products_path, class: "btn btn-lg btn-primary" %>
+	  <%= link_to "Add New Product", addproduct_path, class: "btn btn-lg btn-primary"%>
+	  <% end %>
+	  <%= link_to "Products", products_path, class: "btn btn-lg btn-primary" %>
+	  <% else %>
+		<%= link_to "Signup", signup_path, class: "btn btn-lg btn-primary" %>
+	<% end %>
+	</div>
+	
+	<%= render 'home' %>
+</div>
+<br><br><br><br>

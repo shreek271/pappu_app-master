@@ -1,0 +1,182 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.header{
+	margin:none;
+	height: 50px;
+	font-weight: 700;
+	background-color: #D6DBDF;
+	border-bottom: 2px solid #D6DBDF;
+	a{
+	float: right;
+	font-size: 14px;
+    text-decoration: none;
+	padding:15px;
+	}
+	#logo{
+	float: left;
+	}
+}
+
+.main_body{
+	background-color: #F2F4F4;
+}
+
+
+.home{
+	color: #A6ACAF;
+	font-weight: 600; 
+	#title{
+	font-weight: 700;
+	font-size: 20px;
+	}
+	.about_us{
+	background-color: #FDFEFE;
+	border-radius: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+	height: 150px;
+	}
+	.how_work{
+	background-color: #FDFEFE;
+	border-radius: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 80px;
+	height: 220px;
+	width:92%;
+	.right{
+	float: right;
+	width: 46%;
+	}
+	.left{
+	float: left;
+	width: 46%;
+	}
+	}
+   .why_us{
+	background-color: #FDFEFE;
+	border-radius: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 80px;
+	}
+}
+
+#title{
+	font-weight: 700;
+	font-size: 20px;
+	color: #A6ACAF;
+	}
+
+.banner{
+	height: 300px;
+	margin-top: 15px;
+	margin-bottom: 80px;
+	background-color: #FDFEFE;
+	border-radius: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+	background-image: url(gas1.jpg);
+	.sign_log{
+	padding-top: 150px;
+	} 
+}
+
+.sign_button{
+	height: 100px;
+}
+
+.contact{
+	height: 590px;
+	padding-top: 300px;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+.signup_form{
+	margin-top: 20px;
+}
+
+.row{
+	margin-right: 0px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.footer{
+background-color: #D6DBDF;
+height: 50px;
+}
+
+.profile_head{
+	width:100%;
+	.name{
+	float:left;
+	width:80%;
+	}
+	.address{
+	float: right;
+	width: 20%;
+	margin-top: 15px;
+
+	}
+}
+
+.image{
+	height: 150px;
+	width: 150px;
+}
+
+.customers{
+	margin-top: 20px;
+	text-align: center;
+	th{
+	text-align: center;
+	}
+}

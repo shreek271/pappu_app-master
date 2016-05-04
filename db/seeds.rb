@@ -1,0 +1,12 @@
+Customer.create!(name:  "admin",
+             email: "admin@admin.com",
+             phone: "123456789",
+             password:              "123456",
+             password_confirmation: "123456",
+             admin: true)
+Customer.create!(name:  "Shree",
+             email: "shree@shree.com",
+             phone: "123456789",
+             password:              "123456",
+             password_confirmation: "123456",
+             admin: false)

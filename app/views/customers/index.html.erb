@@ -1,0 +1,32 @@
+<% provide(:title, 'All Customers') %>
+
+<div class="text-center">
+<span id="title">All Customers</span>	
+</div>
+
+<%= will_paginate %>
+<div class="container">
+  <table class="table table-hover customers">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @customers.each do |customer| %>
+        <tr>
+		<td><%= link_to customer.name, customer %></td>
+		<td><%= customer.email %></td>
+		<td><%= customer.phone %></td>
+		<td><%= link_to "delete", customer, method: :delete,
+                                  data: { confirm: "You sure?" } %> </td>
+		<tr>
+		 <% end %>
+    </tbody>
+  </table>
+</div>
+<%= will_paginate %>
+

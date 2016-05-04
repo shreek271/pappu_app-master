@@ -1,0 +1,16 @@
+<div class="container-fluid header">
+    <%= link_to "PGS", root_path, id: "logo" %>
+	<div>
+		<% if logged_in? %>
+		 <%= link_to "Log out", logout_path, method: "delete" %>
+		 <%= link_to "Settings", edit_customer_path(current_customer) %>
+		 <%= link_to "Profile", current_customer %>
+        <%= link_to "contact", contact_path %>
+		<%= link_to "Home", root_url %>
+        <% else %>
+          <%= link_to "Log in", login_path %>
+          <%= link_to "contact", contact_path %>
+		<%= link_to "Home", root_url %>
+        <% end %>		
+	</div>
+</div>

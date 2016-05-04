@@ -1,0 +1,23 @@
+<%= provide(:title, "Products") %>
+
+<div class="text-center">
+<span id="title">Products</span>	
+</div>
+
+<div class="container">
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-sm-3">
+  	<div class="thumbnail text-center">
+    <span><%= (product.name).capitalize %></span>
+		<%= image_tag product.photo.url, class: 'image'%>
+		<%= link_to "Edit", editproduct_path, class: "btn" %>
+		<% if current_customer.try(:admin?) && !current_customer?(@customer) %>
+     	<%= link_to "Delete", product, class: "btn", method: :delete,
+                                  data: { confirm: "You sure?" } %>
+        <% else %>
+        <%= link_to "add to cart", "#" %>
+         <% end %>
+   </div>
+   </div>
+  <% end %>
