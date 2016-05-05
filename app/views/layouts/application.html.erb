@@ -2,23 +2,27 @@
 <html>
 <head>
   <title><%= yield(:title) %> | Pappu Gas Services</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 	<%= render 'layouts/header' %>
 	<div class="main_body">
-	<% flash.each do |message_type, message| %>
+		<div class="text-left">
+		<% if logged_in? %>
+		<%= render 'layouts/cart_text' %>
+    	<% end %>
+		</div>
+		<% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-			<%= yield %>
+      	<% end %>
+     	<%= yield %>
 	</div>
 	<div class="footer text-center">
 		<%= render 'layouts/footer' %>
 	</div>
-	
-
 </body>
 </html>

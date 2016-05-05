@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+   has_many :order_items
+
    mount_uploader :photo, PhotoUploader
    validates :name, presence: true
    validates :price, presence: true

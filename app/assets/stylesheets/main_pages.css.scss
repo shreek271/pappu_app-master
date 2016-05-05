@@ -23,6 +23,11 @@
 	background-color: #F2F4F4;
 }
 
+.cart{
+	a{
+	font-weight:600;
+	}
+}
 
 .home{
 	color: #A6ACAF;
@@ -179,4 +184,12 @@ height: 50px;
 	th{
 	text-align: center;
 	}
+}
+
+.confirmation{
+   margin: 25px 100px 0px 100px;
+   background-color: white;
+	.iname{
+	text-align: center;
+}
 }

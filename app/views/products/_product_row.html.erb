@@ -1,0 +1,21 @@
+<div class="col-sm-3">
+  	<div class="thumbnail text-center">
+    <span><%= (product.name).capitalize %></span>
+		<%= image_tag product.photo.url, class: 'image'%>
+		<% if current_customer.try(:admin?) && !current_customer?(@customer) %>
+    <%= link_to "Edit", editproduct_path, class: "btn" %>
+     	<%= link_to "Delete", product, class: "btn", method: :delete,
+                                  data: { confirm: "You sure?" } %>
+        <% else %>
+        <%= form_for order_item, remote: true do |f| %>
+         <h4 class="text-center">Unit Price: <i class="fa fa-inr"></i><%= product.price %></h4>
+         <div class="text-center">
+           <span>Enter no. of Item <%= f.number_field :quantity, value: 1, class: 'form control', min: 1 %> </span>
+         </div>
+         
+         <%= f.hidden_field :product_id, value: product.id %>
+         <%= f.submit "add to cart", class: "btn btn-primary" %>
+         <%end %> 
+         <% end %>
+   </div>
+   </div>

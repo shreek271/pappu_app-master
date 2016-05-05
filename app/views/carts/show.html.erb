@@ -1,0 +1,14 @@
+<%= provide(:title, "Selected Items") %>
+
+<div class="container">
+  <%= render "shopping_cart" %>
+  <br><br><br>
+  <div class="text-center">
+  <h3>Total Billing amount: <i class="fa fa-inr"></i> <%= current_order.subtotal %></h3>
+  </div>
+  <br><br>
+  <div class="text-center">
+      <%= link_to "Confirm and proceed to payment", "#", class: 'btn btn-primary' %>
+  </div>
+  <br><br>
+</div>
